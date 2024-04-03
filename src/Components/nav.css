@@ -1,0 +1,13 @@
+.Navbar {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem
+
+    
+}
+
+li{
+    text-decoration: none;
+    list-style: none;
+    font-size: 1,5rem;
+}
