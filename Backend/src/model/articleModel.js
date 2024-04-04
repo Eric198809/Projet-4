@@ -34,6 +34,14 @@ const createOne= async (article)=> {
   return result;
 }
 
+const deleteOne = async (id)=> {
+  const [result] = await db.query(
+    `delete from article where idArticle = ?`,
+    [id]
+  );
+  return result;
+}
 
 
-module.exports = { findAll, findOne, createOne};
+
+module.exports = { findAll, findOne, createOne, deleteOne};
