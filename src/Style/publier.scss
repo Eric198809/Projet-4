@@ -1,0 +1,37 @@
+.publication-container{
+  display: flex;
+  margin: auto;
+  padding: 10px 20px;
+  background-color: #F8F7FC;
+  border-radius: 10px;
+  width: 60%;
+  justify-content: center;
+}
+
+.publication-message{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+
+ #titre-message{
+    height: 30px;
+    margin: 10px;
+  }
+
+  #publication-content{
+    height: 100px;
+    margin: 10px;
+  }
+
+  #submit-message-button{
+    margin: 15px auto;
+    width: 15%;
+    height: 40px;
+    background-color:#D9485D;
+border: #D9485D;
+border-radius: 15px;
+padding: 8px;
+color: #ffffff;
+   
+  }
+}

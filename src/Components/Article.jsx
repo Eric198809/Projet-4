@@ -1,11 +1,18 @@
 import PropTypes from "prop-types";
 import image from "../assets/imagetest.png";
 import "../Style/article.scss";
+import { useState } from "react";
 
-const Article = ({ titre, date, content, auteur }) => {
+const Article = ({ articleId ,titre, date, content, auteur, deleteArticle }) => {
+  const [id] = useState(articleId);
+
+  const handleDeleteArticle = () => {
+    deleteArticle(id); 
+  };
+
   return (
     <section>
-      <div className="article-container">
+      <div className="article-container" >
         <div className="infos-article">
           <div className="Title_author">
             <h1>{titre}</h1>
@@ -23,7 +30,7 @@ const Article = ({ titre, date, content, auteur }) => {
         </div>
         <div className="like-supp">
           <span>coeur</span>
-          <button type="button">Supprimer</button>
+          <button type="submit" onClick={handleDeleteArticle}>Supprimer</button>
         </div>
       </div>
     </section>
@@ -31,7 +38,7 @@ const Article = ({ titre, date, content, auteur }) => {
 };
 
 Article.propTypes = {
-  id: PropTypes.number.isRequired,
+  articleId: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
   titre: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
