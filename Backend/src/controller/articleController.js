@@ -1,4 +1,4 @@
-const { findAll, findOne,createOne } = require("../model/articleModel");
+const { findAll, findOne,createOne, deleteOne } = require("../model/articleModel");
 
 const getAll = async (req, res) => {
   try {
@@ -33,7 +33,19 @@ const addOne = async (req, res)=> {
   }
 };
 
+const destroyOne = async (req, res) => {
+  try {
+    const articleId = await deleteOne(req.params.id);
+
+    if (articleId === 0) {
+      res.sendStatus(404);
+    } else {
+      res.json(articleId);
+    }
+  } catch (err) {
+    console.error(err);
+  }
+};
 
 
-
-module.exports = { getAll, getOne, addOne };
+module.exports = { getAll, getOne, addOne, destroyOne };

@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // page components
 
 import Home from "./pages/Home";
-import About from "./pages/About";
+import MonEspace from "./pages/MonEspace";
 import App from "./App";
 
 // router creation
@@ -18,8 +18,8 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/about",
-        element: <About />,
+        path: "/monespace",
+        element: <MonEspace />,
       },
       
     ],
